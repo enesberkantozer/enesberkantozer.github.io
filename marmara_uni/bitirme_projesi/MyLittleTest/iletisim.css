@@ -1,0 +1,14 @@
+.map-container{
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+
+}
+  .map-container iframe{
+    right: 5%;
+    top:8%;
+    height:70%;
+    width:40%;
+    position:absolute;
+  }

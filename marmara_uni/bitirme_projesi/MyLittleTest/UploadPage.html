@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Çoktan Seçmeli</title>
+    <link rel="stylesheet" href="headers.css">
+    <link rel="icon" href="favicon.ico" type=“image/x-icon>
+    <style>
+        body {
+            background-image: linear-gradient(to left, rgb(122, 213, 255), rgb(255, 153, 153));
+        }
+    </style>
+</head>
+
+
+<body style="overflow-x: hidden;">
+    <div hidden id="hiddenid" class="container"></div>
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 text-secondary">Ana Sayfa</a></li>
+                    <li><a href="iletisim.html" class="nav-link px-2 text-white">İletişim</a></li>
+                </ul>
+                <div class="text-end">
+                    <a href="logsign-in.html">
+                        <button type="button" class="btn btn-outline-light me-2">Giriş</button></a>
+                    <a href="sign-up.html">
+                        <button type="button" class="btn btn-warning">Kayıt Ol</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <h4 id="dersname" style="text-align: center;"></h4>
+    <h4 id="zorlukname" style="text-align: center;"></h4>
+    <h4 hidden id="sikname" style="text-align: center;"></h4>
+    <div class="container py-3">
+        <div class="coktan-header p-3 pb-md-4 mx-auto text-center">
+        </div>
+        <div class="col">
+            <div class="card mb-4 rounded-2 shadow-sm ">
+                <div class="card-header py-2 text-center">
+                    <h4 class="my-0 fw-normal">Soru</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-2 mb-2">
+                        <div class="form-group">
+                            <img src="" alt="default-image"
+                                style="display: none; max-width: 100%; max-height: 100%; margin-left: auto; margin-right: auto;"
+                                id="soru-img">
+                            <div style="padding-left: 47%; padding-right: 47%;display: none" id="soruUp"><br>
+                                <button class="w-100 btn btn-lg btn-primary " id="sorununUp">Yükle</button>
+                            </div>
+                            <input type="text" class="form-control" id="soru-text" name="soru" style="margin-top: 2%;"
+                                placeholder="Sorunuzu yazabilirsiniz">
+                        </div>
+                        <div class="mb-1">
+                            <input class="form-control" style="margin-top: 2%;" id="formFileSm1" type="file"
+                                accept=".jpg,.jpeg,.png">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 mb-4">
+        <div class="col-xs-8" id="kutu1"></div>
+        <div class="col-sm-4 col-xs-8 col-md-3 " id="kutu2">
+            <div class="card mb-4 rounded-2 shadow-sm">
+                <div class="card-header py-2 text-center">
+                    <h4 class="my-0 fw-normal">A Şıkkı</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-2 mb-0">
+                        <div class="form-group">
+                            <img src="" alt="default-image"
+                                style="display: none; max-width: 100%; max-height: 100%; margin-left: auto; margin-right: auto;"
+                                id="sik-imgA">
+                            <div style="padding-left: 40%; padding-right: 40%;display: none" id="cevapAUp"><br>
+                                <button class="w-100 btn btn-lg btn-primary " id="acevapUp">Yükle</button>
+                            </div>
+                            <input type="text" class="form-control" id="aSikki" name="aSikki" style="margin-top: 2%;"
+                                placeholder="Şıkkınızı yazabilirsiniz">
+                        </div>
+                        <div class="mb-1">
+                            <input class="form-control" style="margin-top: 4%;" id="formFileSm2" type="file"
+                                accept=".jpg,.jpeg,.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Doğru Cevap" id="7" value="A">
+                            <label class="form-check-label" for="7">
+                                Doğru Cevap
+                            </label>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-8 col-md-3" id="kutu3">
+            <div class="card mb-4 rounded-2 shadow-sm">
+                <div class="card-header py-2 text-center">
+                    <h4 class="my-0 fw-normal">B Şıkkı</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-2 mb-0">
+                        <div class="form-group">
+                            <img src="" alt="default-image"
+                                style="display: none; max-width: 100%; max-height: 100%; margin-left: auto; margin-right: auto;"
+                                id="sik-imgB">
+                            <div style="padding-left: 40%; padding-right: 40%;display: none" id="cevapBUp"><br>
+                                <button class="w-100 btn btn-lg btn-primary " id="bcevapUp">Yükle</button>
+                            </div>
+                            <input type="text" class="form-control" id="bSikki" name="bSikki" style="margin-top: 2%;"
+                                placeholder="Şıkkınızı yazabilirsiniz">
+                        </div>
+                        <div class="mb-1">
+                            <input class="form-control" style="margin-top: 4%;" id="formFileSm3" type="file"
+                                accept=".jpg,.jpeg,.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Doğru Cevap" id="8" value="B">
+                            <label class="form-check-label" for="8">
+                                Doğru Cevap
+                            </label>
+                        </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-8" id="kutu4"></div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-4 mb-4">
+        <div class="col-xs-8" id="kutu5"></div>
+        <div class="col-sm-4 col-xs-8 col-md-3 " id="kutu6">
+            <div class="card mb-4 rounded-2 shadow-sm">
+                <div class="card-header py-2 text-center">
+                    <h4 class="my-0 fw-normal">C Şıkkı</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-2 mb-0">
+                        <div class="form-group">
+                            <img src="" alt="default-image"
+                                style="display: none; max-width: 100%; max-height: 100%; margin-left: auto; margin-right: auto;"
+                                id="sik-imgC">
+                            <div style="padding-left: 40%; padding-right:40%;display: none" id="cevapCUp"><br>
+                                <button class="w-100 btn btn-lg btn-primary " id="ccevapUp">Yükle</button>
+                            </div>
+                            <input type="text" class="form-control" id="cSikki" name="cSikki" style="margin-top: 2%;"
+                                placeholder=" Şıkkınızı yazabilirsiniz">
+                        </div>
+                        <div class="mb-1">
+                            <input class="form-control" style="margin-top: 4%;" id="formFileSm4" type="file"
+                                accept=".jpg,.jpeg,.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Doğru Cevap" id="9" value="C">
+                            <label class="form-check-label" for="9">
+                                Doğru Cevap
+                            </label>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-8 col-md-3" id="kutu7">
+            <div class="card mb-4 rounded-2 shadow-sm ">
+                <div class="card-header py-2 text-center">
+                    <h4 class="my-0 fw-normal">D Şıkkı</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-2 mb-0">
+                        <div class="form-group">
+                            <img src="" alt="default-image"
+                                style="display: none; max-width: 100%; max-height: 100%; margin-left: auto; margin-right: auto;"
+                                id="sik-imgD">
+                            <div style="padding-left: 40%; padding-right:40%;display: none" id="cevapDUp"><br>
+                                <button class="w-100 btn btn-lg btn-primary " id="dcevapUp">Yükle</button>
+                            </div>
+                            <input type="text" class="form-control" id="dSikki" name="dSikki" style="margin-top: 2%;"
+                                placeholder="Şıkkınızı yazabilirsiniz">
+                        </div>
+                        <div class="mb-1">
+                            <input class="form-control" style="margin-top: 4%;" id="formFileSm5" type="file"
+                                accept=".jpg,.jpeg,.png">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Doğru Cevap" id="10" value="D">
+                            <label class="form-check-label" for="10">
+                                Doğru Cevap
+                            </label>
+                        </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-8" id="kutu8"></div>
+    </div>
+    <div class="row ">
+        <div class="col-sm-4 col-xs-12 col-md-4" id="kutu9"></div>
+        <div class="col-sm-4 col-xs-12 col-md-4" id="kutu10">
+            <div class="card mb-4 rounded-2 shadow-sm">
+                <div class="card-header py-2 text-center">
+                    <h4 class="my-0 fw-normal">E Şıkkı</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-2 mb-0">
+                        <div class="form-group">
+                            <img src="" alt="default-image"
+                                style="display: none; max-width: 100%; max-height: 100%; margin-left: auto; margin-right: auto;"
+                                id="sik-imgE">
+                            <div style="padding-left: 40%; padding-right:40%;display: none" id="cevapEUp"><br>
+                                <button class="w-100 btn btn-lg btn-primary " id="ecevapUp">Yükle</button>
+                            </div>
+                            <input type="text" class="form-control" id="eSikki" name="eSikki" style="margin-top: 2%"
+                                placeholder="Şıkkınızı yazabilirsiniz">
+                        </div>
+                        <div class="mb-1">
+                            <input class="form-control" style="margin-top: 4%;" id="formFileSm6" type="file"
+                                accept=".jpg,.jpeg,.png">
+
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Doğru Cevap" id="11" value="E">
+                            <label class="form-check-label" for="11">
+                                Doğru Cevap
+                            </label>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12 col-md-4" id="kutu11"></div>
+        <div style="padding-left: 35%; padding-right: 35%;">
+            <button class="w-100 btn btn-lg btn-primary " id="uploadbtn">Yükle</button>
+        </div>
+    </div>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCL4XzbsaAOT__yBgvQO0No8NKYw5As2zw",
+            authDomain: "mylittletest-35537.firebaseapp.com",
+            databaseURL: "https://mylittletest-35537-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "mylittletest-35537",
+            storageBucket: "mylittletest-35537.appspot.com",
+            messagingSenderId: "703589112752",
+            appId: "1:703589112752:web:444755b3428dc1e1095475"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js";
+        import { getDatabase, ref, set, get, child, update, remove } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+
+        const db = getDatabase();
+
+        var soru_img = document.getElementById("formFileSm1");
+        var soru_text = document.getElementById("soru-text");
+        var sik_imgA = document.getElementById("formFileSm2");
+        var aSikki = document.getElementById("aSikki");
+        var sik_imgB = document.getElementById("formFileSm3");
+        var bSikki = document.getElementById("bSikki");
+        var sik_imgC = document.getElementById("formFileSm4");
+        var cSikki = document.getElementById("cSikki");
+        var sik_imgD = document.getElementById("formFileSm5");
+        var dSikki = document.getElementById("dSikki");
+        var sik_imgE = document.getElementById("formFileSm6");
+        var eSikki = document.getElementById("eSikki");
+        var zorluque = document.getElementById("zorlukname").textContent;
+        var dersinname = document.getElementById("dersname").textContent;
+        var sikinname = document.getElementById("sikname").textContent;
+
+        var insBtn = document.getElementById("uploadbtn");
+        var acevapUp = document.getElementById("acevapUp");
+        var bcevapUp = document.getElementById("bcevapUp");
+        var ccevapUp = document.getElementById("ccevapUp");
+        var dcevapUp = document.getElementById("dcevapUp");
+        var ecevapUp = document.getElementById("ecevapUp");
+
+        var i = 0;
+        var Siksayisi;
+        var dogrucevap = "";
+        var dogrumu = false;
+        var id = 1;
+
+        var files = [];
+        var files1 = [];
+        var files2 = [];
+        var files3 = [];
+        var files4 = [];
+        var files5 = [];
+        var reader = new FileReader();
+
+        var Images = "Images";
+
+        var sorununUp = document.getElementById("sorununUp");
+
+
+        var SoruBoolean = false;
+        var ABoolean = false;
+        var BBoolean = false;
+        var CBoolean = false;
+        var DBoolean = false;
+        var EBoolean = false;
+
+
+
+
+        function InsertData() {
+            if ((document.getElementById('7').checked == true)) {
+                dogrumu = true;
+                dogrucevap = document.getElementById('7').value;
+            }
+            else if ((document.getElementById('8').checked == true)) {
+                dogrumu = true;
+                dogrucevap = document.getElementById('8').value;
+            }
+            else if ((document.getElementById('9').checked == true)) {
+                dogrumu = true;
+                dogrucevap = document.getElementById('9').value;
+            }
+            else if ((document.getElementById('10').checked == true)) {
+                dogrumu = true;
+                dogrucevap = document.getElementById('10').value;
+            }
+            else if ((document.getElementById('11').checked == true)) {
+                dogrumu = true;
+                dogrucevap = document.getElementById('11').value;
+            }
+            else {
+                alert("Doğru Cevap Seçmediniz");
+            }
+
+            if (soru_img.value == "") {
+
+                set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/Soru"), {
+
+                    SoruImageURL: "",
+
+                })
+                    .then(() => {
+                    })
+                    .catch((error) => {
+                        alert("unsuccesful, error" + error);
+                    });
+
+            }
+            if (sik_imgA.value == "") {
+
+                set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/A"), {
+
+                    AImageURL: "",
+
+                })
+                    .then(() => {
+                    })
+                    .catch((error) => {
+                        alert("unsuccesful, error" + error);
+                    });
+
+            }
+            if (sik_imgB.value == "") {
+
+                set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/B"), {
+
+                    BImageURL: "",
+
+                })
+                    .then(() => {
+                    })
+                    .catch((error) => {
+                        alert("unsuccesful, error" + error);
+                    });
+
+            }
+            if (sik_imgC.value == "") {
+
+                set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/C"), {
+
+                    CImageURL: "",
+
+                })
+                    .then(() => {
+                    })
+                    .catch((error) => {
+                        alert("unsuccesful, error" + error);
+                    });
+
+            }
+            if (sik_imgD.value == "") {
+
+                set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/D"), {
+
+                    DImageURL: "",
+
+                })
+                    .then(() => {
+                    })
+                    .catch((error) => {
+                        alert("unsuccesful, error" + error);
+                    });
+
+            }
+            if (sik_imgE.value == "") {
+
+                set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/E"), {
+
+                    EImageURL: "",
+
+                })
+                    .then(() => {
+                    })
+                    .catch((error) => {
+                        alert("unsuccesful, error" + error);
+                    });
+
+            }
+
+            if (dogrumu == true) {
+                if (sikSayisi == "3Sikli") {
+                    if ((soru_img.value == "" && soru_text.value == "") || (aSikki.value == "" && sik_imgA.value == "")
+                        || (bSikki.value == "" && sik_imgB.value == "") || (cSikki.value == "" && sik_imgC.value == "")) {
+                        alert("Boş Şık veya Soru Bırakmayınız...");
+                    }
+                    else if ((dSikki.value == "" && sik_imgD.value == "") && (eSikki.value == "" && sik_imgE.value == "")) {
+
+                        set(ref(db, "Sorular/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id), {
+
+                            soruid: id,
+                            dogrucevap: dogrucevap,
+                            sorutext: soru_text.value,
+                            sik_a: aSikki.value,
+                            sik_b: bSikki.value,
+                            sik_c: cSikki.value,
+                            sik_d: "",
+                            sik_e: "",
+
+                        })
+                            .then(() => {
+                                alert("Soru Sisteme Yüklendi.");
+                                window.location = "coktan.html";
+
+                            })
+                            .catch((error) => {
+                                alert("unsuccesful, error" + error);
+                            });
+                    }
+                }
+                if (sikSayisi == "4Sikli") {
+                    if ((soru_img.value == "" && soru_text.value == "") || (aSikki.value == "" && sik_imgA.value == "")
+                        || (bSikki.value == "" && sik_imgB.value == "") || (cSikki.value == "" && sik_imgC.value == "")
+                        || (dSikki.value == "" && sik_imgD.value == "")) {
+                        alert("Boş Şık veya Soru Bırakmayınız...");
+                    }
+                    else if ((eSikki.value == "" && sik_imgE.value == "")) {
+
+                        set(ref(db, "Sorular/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id), {
+
+                            soruid: id,
+                            dogrucevap: dogrucevap,
+                            sorutext: soru_text.value,
+                            sik_a: aSikki.value,
+                            sik_b: bSikki.value,
+                            sik_c: cSikki.value,
+                            sik_d: dSikki.value,
+                            sik_e: "",
+
+                        })
+                            .then(() => {
+                                alert("Soru Sisteme Yüklendi.");
+                                window.location = "coktan.html";
+
+                            })
+                            .catch((error) => {
+                                alert("unsuccesful, error" + error);
+                            });
+                    }
+                }
+                if (sikSayisi == "5Sikli") {
+                    if ((soru_img.value == "" && soru_text.value == "") || (aSikki.value == "" && sik_imgA.value == "")
+                        || (bSikki.value == "" && sik_imgB.value == "") || (cSikki.value == "" && sik_imgC.value == "")
+                        || (dSikki.value == "" && sik_imgD.value == "") || (eSikki.value == "" && sik_imgE.value == "")) {
+                        alert("Boş Şık veya Soru Bırakmayınız...");
+                    }
+                    else {
+
+                        set(ref(db, "Sorular/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id), {
+
+                            soruid: id,
+                            dogrucevap: dogrucevap,
+                            sorutext: soru_text.value,
+                            sik_a: aSikki.value,
+                            sik_b: bSikki.value,
+                            sik_c: cSikki.value,
+                            sik_d: dSikki.value,
+                            sik_e: eSikki.value,
+
+                        })
+                            .then(() => {
+                                alert("Soru Sisteme Yüklendi.");
+                                window.location = "coktan.html";
+
+                            })
+                            .catch((error) => {
+                                alert("unsuccesful, error" + error);
+                            });
+                    }
+                }
+            }
+        }
+
+        soru_img.onchange = e => {
+            files = e.target.files;
+
+            reader.readAsDataURL(files[0]);
+        }
+        sik_imgA.onchange = e => {
+            files1 = e.target.files;
+
+            reader.readAsDataURL(files1[0]);
+        }
+        sik_imgB.onchange = e => {
+            files2 = e.target.files;
+
+            reader.readAsDataURL(files2[0]);
+        }
+        sik_imgC.onchange = e => {
+            files3 = e.target.files;
+
+            reader.readAsDataURL(files3[0]);
+        }
+        sik_imgD.onchange = e => {
+            files4 = e.target.files;
+
+            reader.readAsDataURL(files4[0]);
+        }
+        sik_imgE.onchange = e => {
+            files5 = e.target.files;
+
+            reader.readAsDataURL(files5[0]);
+        }
+        async function UploadProcess() {
+            var ImgToUpload = files[0];
+            SoruBoolean = true;
+            const metaData = {
+                contentType: ImgToUpload.type
+            }
+
+            const storage = getStorage();
+            const storageRef = sRef(storage, "Images/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/Soru");
+            const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+            UploadTask.on('state-changed', (snapshot) => {
+            },
+                (error) => {
+                    alert("error: image not uploaded");
+                },
+                () => {
+                    getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+                        set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/Soru"), {
+                            SoruImageURL: downloadURL,
+                        });
+                        alert("Sorunun Resmi Sisteme Yüklenmiştir.");
+                    });
+                }
+            );
+        }
+        async function UploadProcessA() {
+            var ImgToUpload = files1[0];
+            ABoolean = true;
+
+            const metaData = {
+                contentType: ImgToUpload.type
+            }
+
+            const storage = getStorage();
+            const storageRef = sRef(storage, "Images/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/Cevap A");
+            const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+
+            UploadTask.on('state-changed', (snapshot) => {
+            },
+                (error) => {
+                    alert("error: image not uploaded");
+                },
+                () => {
+                    getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+                        set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/A"), {
+                            AImageURL: downloadURL,
+                        });
+                        alert("A Şıkkının Resmi Yüklenmiştir");
+                    });
+                }
+            );
+        }
+        async function UploadProcessB() {
+            var ImgToUpload = files2[0];
+            BBoolean = true;
+            const metaData = {
+                contentType: ImgToUpload.type
+            }
+
+            const storage = getStorage();
+            const storageRef = sRef(storage, "Images/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/Cevap B");
+            const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+
+            UploadTask.on('state-changed', (snapshot) => {
+            },
+                (error) => {
+                    alert("error: image not uploaded");
+                },
+                () => {
+                    getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+                        set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/B"), {
+                            BImageURL: downloadURL,
+                        });
+                        alert("B Şıkkının Resmi Yüklenmiştir");
+                    });
+                }
+            );
+        }
+        async function UploadProcessC() {
+            var ImgToUpload = files3[0];
+            CBoolean = true;
+            const metaData = {
+                contentType: ImgToUpload.type
+            }
+
+            const storage = getStorage();
+            const storageRef = sRef(storage, "Images/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/Cevap C");
+            const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+
+            UploadTask.on('state-changed', (snapshot) => {
+            },
+                (error) => {
+                    alert("error: image not uploaded");
+                },
+                () => {
+                    getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+                        set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/C"), {
+                            CImageURL: downloadURL,
+                        });
+                        alert("C Şıkkının Resmi Yüklenmiştir");
+                    });
+                }
+            );
+        }
+        async function UploadProcessD() {
+            var ImgToUpload = files4[0];
+            DBoolean = true;
+            const metaData = {
+                contentType: ImgToUpload.type
+            }
+
+            const storage = getStorage();
+            const storageRef = sRef(storage, "Images/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/Cevap D");
+            const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+
+            UploadTask.on('state-changed', (snapshot) => {
+            },
+                (error) => {
+                    alert("error: image not uploaded");
+                },
+                () => {
+                    getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+                        set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/D"), {
+                            DImageURL: downloadURL,
+                        });
+                        alert("D Şıkkının Resmi Yüklenmiştir");
+                    });
+                }
+            );
+        }
+        async function UploadProcessE() {
+            var ImgToUpload = files5[0];
+            EBoolean = true;
+            const metaData = {
+                contentType: ImgToUpload.type
+            }
+
+            const storage = getStorage();
+            const storageRef = sRef(storage, "Images/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/Cevap E");
+            const UploadTask = uploadBytesResumable(storageRef, ImgToUpload, metaData);
+
+            UploadTask.on('state-changed', (snapshot) => {
+            },
+                (error) => {
+                    alert("error: image not uploaded");
+                },
+                () => {
+                    getDownloadURL(UploadTask.snapshot.ref).then((downloadURL) => {
+                        set(ref(db, "SorularResim/" + dersinname + "/" + zorluque + "/" + sikinname + "/" + id + "/E"), {
+                            EImageURL: downloadURL,
+                        });
+                        alert("E Şıkkının Resmi Yüklenmiştir");
+                    });
+                }
+            );
+        }
+        acevapUp.addEventListener('click', UploadProcessA);
+        bcevapUp.addEventListener('click', UploadProcessB);
+        ccevapUp.addEventListener('click', UploadProcessC);
+        dcevapUp.addEventListener('click', UploadProcessD);
+        ecevapUp.addEventListener('click', UploadProcessE);
+        sorununUp.addEventListener('click', UploadProcess);
+
+        insBtn.addEventListener('click', InsertData);
+
+
+
+        var hiddenIdDiv = document.getElementById("hiddenid");
+
+        function addItemToParams(id) {
+
+            let hidden_Id_p = document.createElement("p");
+
+            hidden_Id_p.innerHTML = id;
+
+            hiddenIdDiv.appendChild(hidden_Id_p);
+
+            var id = hidden_Id_p.value;
+        }
+
+        function addAllItemsToParams(TheSorular) {
+            TheSorular.forEach(element => {
+                addItemToParams(element.soruid);
+                id = element.soruid;
+                id++;
+            });
+        }
+
+        function getAllDataOnce() {
+            const dbRef = ref(db);
+
+            get(child(dbRef, "Sorular/" + dersinname + "/" + zorluque + "/" + sikinname))
+                .then((snapshot) => {
+                    var drs = [];
+                    snapshot.forEach(childSnapshot => {
+                        drs.push(childSnapshot.val());
+
+                    });
+                    addAllItemsToParams(drs);
+                });
+        }
+
+        window.onload = getAllDataOnce();
+    </script>
+    <script language="javascript" type="text/javascript" src="UploadPage.js"></script>
+    <script language="javascript" type="text/javascript" src="preview.js"></script>
+</body>
+
+</html>

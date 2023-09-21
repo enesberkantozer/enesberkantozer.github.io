@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Çoktan Seçmeli</title>
+    <link href="headers.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type=“image/x-icon>
+    <style>
+        body {
+            background-image: linear-gradient(to left, rgb(122, 213, 255), rgb(255, 153, 153));
+        }
+    </style>
+</head>
+
+<body>
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 text-secondary">Ana Sayfa</a></li>
+                    <li><a href="iletisim.html" class="nav-link px-2 text-white">İletişim</a></li>
+                </ul>
+                <div class="text-end">
+                    <a href="logsign-in.html">
+                        <button type="button" class="btn btn-outline-light me-2">Giriş</button></a>
+                    <a href="sign-up.html">
+                        <button type="button" class="btn btn-warning">Kayıt Ol</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container py-3">
+        <div class="coktan-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">Ders Ekleme</h1>
+            <p class="fs-5" style="color: rgb(0, 0, 0);">Dersin adını ilgili alana
+                giriniz, daha
+                sonrasında ekle butonuna tıklayınız.
+            </p>
+        </div>
+        <main>
+            <div class="row">
+                <div class="col-sm-4 col-xs-12 col-md-4"></div>
+                <div class="col-sm-4 col-xs-12 col-md-4">
+                    <div class="card mb-4 rounded-2 shadow-sm ">
+                        <div class="card-header py-2 text-center">
+                            <h4 class="my-0 fw-normal">Ders Adı Gir</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><small class="text-muted fw-light"></small>
+                            </h1>
+                            <div class="form-group"><br>
+                                <input type="text" class="form-control" id="Dersadi" name="Dersadi"
+                                    placeholder="Dersin adı"><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12 col-md-4"></div>
+                </div>
+        </main>
+    </div>
+    <div style="padding-left: 39%; padding-right: 39%;">
+        <button type="submit" class="w-100 btn btn-lg btn-primary " id="btnekle">Ekle</button>
+    </div>
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCL4XzbsaAOT__yBgvQO0No8NKYw5As2zw",
+            authDomain: "mylittletest-35537.firebaseapp.com",
+            databaseURL: "https://mylittletest-35537-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "mylittletest-35537",
+            storageBucket: "mylittletest-35537.appspot.com",
+            messagingSenderId: "703589112752",
+            appId: "1:703589112752:web:444755b3428dc1e1095475"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        import { getDatabase, ref, set, get, child, update, remove } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+
+        const db = getDatabase();
+
+        var ders_adi = document.getElementById("Dersadi");
+
+        var btn = document.getElementById("btnekle");
+
+        function InsertData() {
+
+            if ((ders_adi.value == "")) {
+                alert("Lütfen Ders Adını Boş Bırakmayınız");
+            }
+            else {
+                set(ref(db, "Sorular/" + ders_adi.value + "/"), {
+                    ders_adi: ders_adi.value,
+
+                })
+                    .then(() => {
+                        alert("Ders Sisteme Eklenmiştir");
+                        window.location = "index.html";
+                    })
+                    .catch((error) => {
+                        alert("unsuccesful, error" + error);
+                    });
+            }
+        }
+
+        btn.addEventListener('click', InsertData);
+
+    </script>
+
+</body>
+
+
+</html>
